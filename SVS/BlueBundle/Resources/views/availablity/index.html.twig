@@ -1,0 +1,91 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>availablity list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Conename</th>
+                <th>Conetelephone</th>
+                <th>Coneaddress</th>
+                <th>Conepostcode</th>
+                <th>Conerelationship</th>
+                <th>Ctwoname</th>
+                <th>Ctwotelephone</th>
+                <th>Ctwoaddress</th>
+                <th>Ctwopostcode</th>
+                <th>Ctworelationship</th>
+                <th>Daymon</th>
+                <th>Daytues</th>
+                <th>Daywed</th>
+                <th>Daythurs</th>
+                <th>Dayfri</th>
+                <th>Daysat</th>
+                <th>Daysun</th>
+                <th>Daybank</th>
+                <th>Daysummer</th>
+                <th>Evenmon</th>
+                <th>Eventues</th>
+                <th>Evenwed</th>
+                <th>Eventhurs</th>
+                <th>Evenfri</th>
+                <th>Evenbank</th>
+                <th>Evensummer</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('availablity_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.coneName }}</td>
+                <td>{{ entity.coneTelephone }}</td>
+                <td>{{ entity.coneAddress }}</td>
+                <td>{{ entity.conePostcode }}</td>
+                <td>{{ entity.coneRelationship }}</td>
+                <td>{{ entity.ctwoName }}</td>
+                <td>{{ entity.ctwoTelephone }}</td>
+                <td>{{ entity.ctwoAddress }}</td>
+                <td>{{ entity.ctwoPostcode }}</td>
+                <td>{{ entity.ctwoRelationship }}</td>
+                <td>{{ entity.daymon }}</td>
+                <td>{{ entity.daytues }}</td>
+                <td>{{ entity.daywed }}</td>
+                <td>{{ entity.daythurs }}</td>
+                <td>{{ entity.dayfri }}</td>
+                <td>{{ entity.daysat }}</td>
+                <td>{{ entity.daysun }}</td>
+                <td>{{ entity.daybank }}</td>
+                <td>{{ entity.daysummer }}</td>
+                <td>{{ entity.evenmon }}</td>
+                <td>{{ entity.eventues }}</td>
+                <td>{{ entity.evenwed }}</td>
+                <td>{{ entity.eventhurs }}</td>
+                <td>{{ entity.evenfri }}</td>
+                <td>{{ entity.evenbank }}</td>
+                <td>{{ entity.evensummer }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('availablity_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('availablity_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('availablity_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

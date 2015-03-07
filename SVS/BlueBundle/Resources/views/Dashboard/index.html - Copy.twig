@@ -1,0 +1,9 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    {% if exist == false %}
+    <p>Contact is not completed</p>
+    {% else %}
+      <p>Contact is completed</p>
+{% endif %}
+    {% endblock %}

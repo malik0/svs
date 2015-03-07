@@ -1,0 +1,63 @@
+{% extends '::base.html.twig' %}
+
+{% block content -%}
+    <h1>Contact list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Firstname</th>
+                <th>Surname</th>
+                <th>Email</th>
+                <th>Telday</th>
+                <th>Televen</th>
+                <th>Mobile</th>
+                <th>Postcode</th>
+                <th>Addressone</th>
+                <th>Addresstwo</th>
+                <th>City</th>
+                <th>Distance</th>
+                <th>Travelnation</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('contact_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.firstname }}</td>
+                <td>{{ entity.surname }}</td>
+                <td>{{ entity.email }}</td>
+                <td>{{ entity.telday }}</td>
+                <td>{{ entity.televen }}</td>
+                <td>{{ entity.mobile }}</td>
+                <td>{{ entity.postcode }}</td>
+                <td>{{ entity.addressone }}</td>
+                <td>{{ entity.addresstwo }}</td>
+                <td>{{ entity.city }}</td>
+                <td>{{ entity.distance }}</td>
+                <td>{{ entity.travelnation }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('contact_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('contact_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('contact_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

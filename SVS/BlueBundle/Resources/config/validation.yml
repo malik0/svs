@@ -1,0 +1,9 @@
+SVS\BlueBundle\Entity\Gold:
+    getters:
+        datesValid:
+            - "True": { message: "the end date must be after the start date" }
+        startValid:
+            - "True": { message: "Please make sure the first entry is before 5 years" }
+        noGap:
+            - "True": { message: "There is a gap in the dates, date must follow ........" }
+          

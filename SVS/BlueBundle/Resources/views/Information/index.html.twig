@@ -1,0 +1,63 @@
+{% extends 'SVSBlueBundle::layout.html.twig' %}
+
+{% block body -%}
+    <h1>Information list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Workeligible</th>
+                <th>Visatype</th>
+                <th>Visaexpiry</th>
+                <th>Drivinglicence</th>
+                <th>Regularcar</th>
+                <th>Transportothers</th>
+                <th>Haveconviction</th>
+                <th>Convictiondetails</th>
+                <th>Interviewaccomadation</th>
+                <th>Interviewdetails</th>
+                <th>Havesia</th>
+                <th>Sialicenceno</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('information_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.workeligible }}</td>
+                <td>{{ entity.visatype }}</td>
+                <td>{{ entity.visaexpiry }}</td>
+                <td>{{ entity.drivinglicence }}</td>
+                <td>{{ entity.regularcar }}</td>
+                <td>{{ entity.transportothers }}</td>
+                <td>{{ entity.haveconviction }}</td>
+                <td>{{ entity.convictiondetails }}</td>
+                <td>{{ entity.interviewaccomadation }}</td>
+                <td>{{ entity.interviewdetails }}</td>
+                <td>{{ entity.havesia }}</td>
+                <td>{{ entity.sialicenceno }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('information_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('information_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('information_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

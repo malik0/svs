@@ -1,0 +1,76 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Information</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Workeligible</th>
+                <td>{{ entity.workeligible }}</td>
+            </tr>
+            <tr>
+                <th>Visatype</th>
+                <td>{{ entity.visatype }}</td>
+            </tr>
+            <tr>
+                <th>Visaexpiry</th>
+                <td>{{ entity.visaexpiry }}</td>
+            </tr>
+            <tr>
+                <th>Drivinglicence</th>
+                <td>{{ entity.drivinglicence }}</td>
+            </tr>
+            <tr>
+                <th>Regularcar</th>
+                <td>{{ entity.regularcar }}</td>
+            </tr>
+            <tr>
+                <th>Transportothers</th>
+                <td>{{ entity.transportothers }}</td>
+            </tr>
+            <tr>
+                <th>Haveconviction</th>
+                <td>{{ entity.haveconviction }}</td>
+            </tr>
+            <tr>
+                <th>Convictiondetails</th>
+                <td>{{ entity.convictiondetails }}</td>
+            </tr>
+            <tr>
+                <th>Interviewaccomadation</th>
+                <td>{{ entity.interviewaccomadation }}</td>
+            </tr>
+            <tr>
+                <th>Interviewdetails</th>
+                <td>{{ entity.interviewdetails }}</td>
+            </tr>
+            <tr>
+                <th>Havesia</th>
+                <td>{{ entity.havesia }}</td>
+            </tr>
+            <tr>
+                <th>Sialicenceno</th>
+                <td>{{ entity.sialicenceno }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('information') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('information_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}
